@@ -1,0 +1,87 @@
+Data binding 
+-share data inside the component
+
+
+1- one way binding(one direction data flow):
+   ts-component
+   html-view
+
+   1.1 Component to view (ts -> html):
+
+        a) String interpolation - {{expression}}
+        b) Property binding - [attribute_name] = "property"
+    
+    1.2 view to component(html -> ts ):
+        a)Event binding - (event_name)="function_name()"
+        b)Event binding using $event- (event_name) = "function_name($event)"
+        c)Event binding using template referencing variable -#variable_name
+
+2- Two way Binding
+[(ngModel)]="property"
+
+
+Angular Routing- To set path for a component
+
+{
+    path:value,component:class_name
+}
+
+Dependancy Injection:
+---------------------------------
+To share data between two dependent class
+
+Angular Services:
+----------------------------------
+ng g s service_name
+
+Parent and child communication
+----------------------------------
+1)parent to child - @input
+2)child to parent - @output
+
+
+Angular pipes
+---------------------------------
+{{value-expression  | date [:format[time-zone]]}}
+
+
+
+Angular Directives
+----------------------------------
+-To manipulate the DOM elements 
+
+a)Component Directives
+
+b)Structural Directives
+
+    1)ngFor
+
+Angular Forms
+----------------------------------
+a)Template Driven Forms
+
+b)Model Driver Forms -adv validations
+    1)Reactive Forms
+    formGroup,array,control
+       -add validations
+       -import Reactive Form Modules
+
+LocalStorage
+    -setItem
+    -getItem
+    -removeItem
+
+
+Angular pipes
+
+FrontEnd and BackEnd connection
+
+import HttpClientModule
+
+RxJS - Reactive Extensions for JavaScript
+
+To Solve Asynchronous Angular requests
+
+1. observable(ts) - (Alternative for promise(js))
+a)subscribe()
+b)catch

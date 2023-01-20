@@ -1,0 +1,71 @@
+<!-- Section: Design Block -->
+<div style="background-color:hsl(218, 81%, 75%)" class="container rounded-circle shadow-lg">
+  <section class="background-radial-gradient rounded-circle">
+  
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+            Amigo Bank<br/>
+          </h1>
+          <h5>
+            <span style="color: hsl(218, 81%, 75%)">Your perfect banking partner</span>
+            </h5>
+  
+          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          </p>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card bg-glass">
+            <div class="card-body px-4 py-5 px-md-5">
+              <form [formGroup]="registerForm" >
+                  <div class="form-outline mb-4">
+                  <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched" style="color: red;">invalid username</div>  
+  
+                  <input formControlName="uname" type="text" type="text" id="form3Example3" class="form-control" />
+                  <label class="form-label" for="form3Example3">Username</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" style="color: red;">invalid account number</div>  
+  
+                  <input formControlName="acno" type="text" type="text" id="form3Example3" class="form-control" />
+                  <label class="form-label" for="form3Example3">Account Number</label>
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" style="color: red;">invalid password</div>  
+  
+                  <input formControlName="pswd" type="password" id="form3Example4" class="form-control" />
+  
+                  <label class="form-label" for="form3Example4">Password</label>
+                </div>
+                
+  
+                <!-- Submit button -->
+                <div class="text-center">
+  
+                <button type="button" (click)="register()" class="btn btn-primary btn-block ps-5 pe-5">
+                  Login
+                </button>
+  </div>
+            
+  
+                  
+              
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <!-- Section: Design Block -->
+    <!-- <app-register></app-register> -->
+    
+    

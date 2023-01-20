@@ -1,0 +1,47 @@
+SERVER CREATION
+ 
+
+ BASIC COMMANDS
+ ------------------------------------
+
+ 1) Creating package- json - npm init
+ 2) Install Express - npm i Express
+ 3) Install JWT - npm i jsonwebtoken
+ 4) Install mongoose - npm i mongoose
+ 5) Install CORS - npm i cors
+
+
+ BASIC STEPS
+ --------------------------------------
+
+ 1) Create a folder
+ 2) Create package.json
+ 3) Install express
+ 4) Create Index.js
+ 5) Import Express inside the index.js
+ 6) Create app using Express
+ 7) Setup port number
+ 8) Resolving http methods
+ 9) HTTP response code
+    1xx- Information
+    2xx- Success
+    3xx- Redirection
+    4xx- Client Error
+    5xx- Server Error
+10) JWT (JSON WEB TOKEN)- For authentication
+    jwt.sign()
+11) Middleware -
+    1)application specific middleware - for entire application
+    next()
+    2)router specific middleware - token verification -verify()
+
+    for specific component
+12) Database Integration- 
+     install mongoose
+     To connect with mongodb via mongoose
+     create model using mongoose
+13) Asynchronous function Resolving - promise
+     resolve - then()
+     reject - catch()
+14) CORS - Cross Origin Resource Sharing
+    install corse

@@ -1,0 +1,198 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      <!-- Navbar brand -->
+      <h1 class="text-light" id="greet">Welcome <i class="text-primary">{{user}}</i></h1><br>
+     <div class=" text-secondary ms-5 ">
+      <mark class="rounded bg-success text-light p-2">{{systemDate | date:'short'}}
+      </mark>
+     </div> 
+        <!-- Left links -->
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          
+          <!-- <a class="nav-link" href="#">Dashboard</a> -->
+        </li>
+        <li class="nav-item">
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="#">Projects</a> -->
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <button class="btn btn-outline-light me-3" routerLink="/transaction" >Transaction</button>
+
+      <button class="btn btn-outline-info me-3" (click)=logout()><i class="fa-solid fa-right-from-bracket"></i></button>
+      <button class="btn btn-outline-danger" (click)=delete()><i class="fa-solid fa-trash"></i></button>       
+   
+
+    </div>
+    <!-- Right elements -->
+    
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+    
+    <app-delete [item]="acno2" (onCancel)="onCancel()" (onDelete)="onDelete($event)" ></app-delete>
+    
+
+ <!-- <h4>System Time and Date:{{systemDate}}</h4> -->
+ <!-- <h4>System Time and Date:{{systemDate | date:'short'}}</h4> -->
+<h1 align="center"><i class="fa-solid fa-money-bill-transfer mt-3"></i></h1>
+<div [ngClass]="acno2?'style1':''" >
+
+<section class="h-100 h-custom gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2 bg-dark text-light" style="border-radius: 55px;">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <h3 class="fw-normal mb-5" align="center"><mark class="highlight rounded  text-dark ps-5 pe-5">Deposit Form</mark></h3>
+                  <form [formGroup]="depositForm">
+
+                  <div class="mb-4 pb-2">
+
+                    <div class="form-outline form-white">
+
+                      <div *ngIf="this.depositForm.get('acno')?.errors&&this.depositForm.get('acno')?.touched" style="color: red;">invalid account number</div>  
+
+                      <input formControlName="acno" type="text" id="form3Examplea2" class="form-control bg-light text-dark form-control-lg" />
+                      <label class="form-label" for="form3Examplea2">Account Number</label>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 pb-2">
+                    <div class="form-outline form-white">
+                      <div *ngIf="this.depositForm.get('pswd')?.errors&&this.depositForm.get('pswd')?.touched" style="color: red;">invalid password</div>  
+
+                      <input formControlName="pswd" type="password" id="form3Examplea2" class="form-control bg-light text-dark form-control-lg" />
+                      <label class="form-label" for="form3Examplea2">Password</label>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 pb-2">
+                    <div class="form-outline form-white">
+                      <div *ngIf="this.depositForm.get('amount')?.errors&&this.depositForm.get('amount')?.touched" style="color: red;">invalid amount</div>  
+
+                      <input formControlName="amount" type="text" id="form3Examplea2" class="form-control bg-light text-dark form-control-lg" />
+                      <label class="form-label" for="form3Examplea2">Amount</label>
+                    </div>
+                  </div>
+
+                  
+                  <button type="button" class="btn btn-light btn-lg"
+                    data-mdb-ripple-color="dark" (click)=deposit()>Deposit</button>
+                    </form>
+                
+                </div>
+                
+              </div>
+              
+              
+              <div class="col-lg-6 bg-indigo text-white">
+                <div class="p-5">
+                  <h3 class="fw-normal mb-5" align="center" style="font-family: 'Play', sans-serif;"><mark class="highlight rounded  text-dark ps-5 pe-5">Withdraw Form</mark></h3>
+                  <form [formGroup]="withdrawForm" action="">
+
+                  <div class="mb-4 pb-2">
+                    <div class="form-outline form-white">
+                      <div *ngIf="this.withdrawForm.get('acno1')?.errors&&this.withdrawForm.get('acno1')?.touched" style="color: red;">invalid account number</div>  
+
+                      <input type="text" id="form3Examplea2" formControlName="acno1" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Examplea2">Account Number</label>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 pb-2">
+                    <div class="form-outline form-white">
+                      <div *ngIf="this.withdrawForm.get('pswd1')?.errors&&this.withdrawForm.get('pswd1')?.touched" style="color: red;">invalid password</div>  
+
+                      <input type="password" id="form3Examplea2 " formControlName="pswd1" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Examplea2">Password</label>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 pb-2">
+                    <div class="form-outline form-white">
+                      <div *ngIf="this.withdrawForm.get('amount1')?.errors&&this.withdrawForm.get('amount1')?.touched" style="color: red;">invalid amount</div>  
+
+                      <input type="text" id="form3Examplea2" formControlName="amount1" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3Examplea2">Amount</label>
+                    </div>
+                  </div>
+
+
+
+                  
+
+                  <button type="button" class="btn btn-light btn-lg"
+                    data-mdb-ripple-color="dark" (click)=withdraw() >Withdraw</button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+    <footer class="bg-dark text-center text-white">
+      <!-- Grid container -->
+      <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+    
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-twitter"></i
+          ></a>
+    
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-google"></i
+          ></a>
+    
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-instagram"></i
+          ></a>
+    
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+    
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:
+        <a class="text-white" routerLink="/">Amigo Bank</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
